@@ -12,15 +12,15 @@ function App() {
 
   return (
       <Router>
-			{/* <TopBar />
-      <Header /> */}
+			{/* <TopBar /> */}
+      {/* <Header /> */}
       <div className="container">
         <Routes>
-          {/* <Route path="/" exact element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/quote" element={<Quote />} />
-          <Route path="*" element={<NoMatch />} /> */}
+          {/* <Route path="/" exact element={<Home />} /> */}
+          {/* <Route path="/about" element={<About />} /> */}
+          {/* <Route path="/gallery" element={<Gallery />} /> */}
+          {/* <Route path="/quote" element={<Quote />} /> */}
+          {/* <Route path="*" element={<NoMatch />} /> */}
         </Routes>
       </div>
       {/* <Footer /> */}
