@@ -1,6 +1,6 @@
 type LogoProps = {
-	width: string;
-	className: string;
+	width: number;
+	className?: string;
 };
 
 const Logo = ({ width, className }: LogoProps) => {

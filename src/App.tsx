@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 // import Header from "./components/Header";
 import TopBar from "./components/TopBar";
 import Services from "./pages/Services";
@@ -12,7 +12,7 @@ function App() {
 		<Router>
 			<TopBar />
 			{/* <Header /> */}
-			<div className="px-4">
+			<div className="container mx-auto">
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/services" element={<Services />} />
@@ -20,7 +20,7 @@ function App() {
 					<Route path="*" element={<NoMatch />} />
 				</Routes>
 			</div>
-			{/* <Footer /> */}
+			<Footer />
 		</Router>
 	);
 }
