@@ -1,5 +1,8 @@
 import React from "react";
 import Hero from "../components/Hero";
+import QuoteForm from "../components/QuoteForm";
+import Section from "../components/Section";
+import SectionTitle from "../components/SectionTitle";
 
 const Home = () => {
   return (
@@ -10,6 +13,10 @@ const Home = () => {
         imageSrc="/src/assets/home.png"
         imageAlt="Moving Truck"
       />
+      <Section>
+        <SectionTitle title="Get a Quote" />
+        <QuoteForm />
+      </Section>
     </div>
   );
 };
