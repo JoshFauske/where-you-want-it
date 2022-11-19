@@ -1,6 +1,7 @@
-import React, { HTMLInputTypeAttribute } from "react";
+import React, { HTMLInputTypeAttribute, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import Input from "./Input";
+import emailjs from "@emailjs/browser";
+import Alert from "./Alert";
 
 type QuoteFormProps = {};
 
@@ -15,8 +16,42 @@ type FormData = {
   moveInDate: HTMLInputTypeAttribute;
 };
 
+type InputProps = {
+  label: string;
+  required: boolean;
+  register: any;
+  registerAs: string;
+  type: string;
+};
+
+type ErrorProps = {
+  msg: string;
+};
+
+const Input = ({ label, register, registerAs, required, type }: InputProps) => (
+  <div className="flex flex-col">
+    <label>{label}</label>
+    <input
+      type={type}
+      className="border-2 border-black"
+      {...register(registerAs, { required })}
+    />
+  </div>
+);
+
+const Error = ({ msg }: ErrorProps) => (
+  <p role="alert" className="text-sm text-red-600 italic">
+    {msg}
+  </p>
+);
+
 const QuoteForm = ({}: QuoteFormProps) => {
-  let inputClassName = "border-2 border-black";
+	const [formError, setFormError] = useState<boolean>(false)
+	const [formSuccess, setFormSuccess] = useState<boolean>(false)
+
+	useEffect(() => {
+    emailjs.init('RWuD-9-E_3cyevkLk');
+  }, []);
 
   const {
     register,
@@ -24,71 +59,137 @@ const QuoteForm = ({}: QuoteFormProps) => {
     formState: { errors },
   } = useForm<FormData>();
 
-  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    let templateParams = {
+      fromName: data.firstName + " " + data.lastName,
+      email: data.email,
+      phone: data.phone,
+      toZip: data.toZip,
+      fromZip: data.fromZip,
+      rooms: data.rooms,
+      moveInDate: data.moveInDate,
+    };
+
+    emailjs.send("contact_service", "contact_form_template", templateParams).then(
+      function (response: { status: number; text: string }) {
+        setFormSuccess(true)
+        setFormError(false)
+      },
+      function (error: string) {
+        setFormSuccess(false)
+        setFormError(true)
+      }
+    );
+  };
 
   return (
     <div className="w-full">
+			{formSuccess && <Alert type="success" msg="Success! Your quote has been recieved. Please check your email for confirmation." />}
+			{formError && <Alert type="error" msg="Error! Something went wrong, please try again." />}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-          <Input htmlFor="fromZip" label="From Zip">
-            <input
+          <div>
+            <Input
               type="number"
-              className={inputClassName}
-              {...register("fromZip")}
+              label="From Zip"
+              register={register}
+              registerAs="fromZip"
+              required
             />
-          </Input>
-          <Input htmlFor="toZip" label="To Zip">
-            <input
+            {errors.fromZip?.type === "required" && (
+              <Error msg="From zip is required" />
+            )}
+          </div>
+          <div>
+            <Input
               type="number"
-              className={inputClassName}
-              {...register("toZip")}
+              label="To Zip"
+              register={register}
+              registerAs="toZip"
+              required
             />
-          </Input>
-          <Input htmlFor="rooms" label="How many rooms?">
-            <input
+            {errors.toZip?.type === "required" && (
+              <Error msg="To zip is required" />
+            )}
+          </div>
+          <div>
+            <Input
               type="number"
-              className={inputClassName}
-              {...register("rooms")}
+              label="How Many Rooms"
+              register={register}
+              registerAs="rooms"
+              required
             />
-          </Input>
-          <Input htmlFor="firstName" label="First Name">
-            <input
+            {errors.rooms?.type === "required" && (
+              <Error msg="How many rooms is required" />
+            )}
+          </div>
+          <div>
+            <Input
               type="text"
-              className={inputClassName}
-              {...register("firstName")}
+              label="First Name"
+              register={register}
+              registerAs="firstName"
+              required
             />
-          </Input>
-          <Input htmlFor="lastName" label="Last Name">
-            <input
+            {errors.firstName?.type === "required" && (
+              <Error msg="First name is required" />
+            )}
+          </div>
+          <div>
+            <Input
               type="text"
-              className={inputClassName}
-              {...register("lastName")}
+              label="Last Name"
+              register={register}
+              registerAs="lastName"
+              required
             />
-          </Input>
-          <Input htmlFor="email" label="Email">
-            <input
+            {errors.lastName?.type === "required" && (
+              <Error msg="Last name is required" />
+            )}
+          </div>
+          <div>
+            <Input
               type="email"
-              className={inputClassName}
-              {...register("email")}
+              label="Email"
+              register={register}
+              registerAs="email"
+              required
             />
-          </Input>
-          <Input htmlFor="phone" label="Telephone">
-            <input
+            {errors.email?.type === "required" && (
+              <Error msg="Email is required" />
+            )}
+          </div>
+          <div>
+            <Input
               type="tel"
-              className={inputClassName}
-              {...register("phone")}
+              label="Telephone"
+              register={register}
+              registerAs="phone"
+              required
             />
-          </Input>
-          <Input htmlFor="moveInDate" label="Move in date">
-            <input
+            {errors.phone?.type === "required" && (
+              <Error msg="Telephone is required" />
+            )}
+          </div>
+          <div>
+            <Input
               type="date"
-              className={inputClassName}
-              {...register("moveInDate")}
+              label="Move in date"
+              register={register}
+              registerAs="moveInDate"
+              required
             />
-          </Input>
+            {errors.moveInDate?.type === "required" && (
+              <Error msg="Move in date is required" />
+            )}
+          </div>
         </div>
 
-        <input type="submit" className="mt-4 border bg-primaryColor text-white px-4 py-2 cursor-pointer" />
+        <input
+          type="submit"
+          className="mt-4 border bg-primaryColor text-white px-4 py-2 cursor-pointer"
+        />
       </form>
     </div>
   );

@@ -10,7 +10,7 @@ type NavButtonProps = {
 const NavButton = ({ href, text, active }: NavButtonProps) => {
   return (
     <Link to={href}>
-      <a className={`ml-3 ${active ? "font-bold border-b-2 border-primaryColor" : ""}`}>{text}</a>
+      <div className={`ml-3 ${active ? "font-bold border-b-2 border-primaryColor" : ""}`}>{text}</div>
     </Link>
   );
 };
