@@ -10,7 +10,7 @@ const IconCard = ({ icon, text }: IconCardProps) => {
     <div className="border-2 border-primaryColor">
       <div className="flex-flex-col p-2 sm:p-4">
         <i>{icon}</i>
-        <div className="uppercase mt-4 text-center">{text}</div>
+        <div className="uppercase mt-4 text-center font-bold">{text}</div>
       </div>
     </div>
   );
