@@ -1,5 +1,4 @@
 import React from "react";
-import { BsImages } from "react-icons/bs";
 import Hero from "../components/Hero";
 import LightBox from "../components/LightBox";
 import QuoteForm from "../components/QuoteForm";
@@ -57,7 +56,7 @@ const Gallery = ({}: GalleryProps) => {
         <div className="grid grid-cols-4 gap-4">
           {images.map((image, i) => {
             return (
-							<LightBox src={image} alt="Gallery Image" />
+							<LightBox src={image} alt="Gallery Image" key={i} />
             );
           })}
         </div>
