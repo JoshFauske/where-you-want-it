@@ -12,6 +12,11 @@ module.exports = {
       },
 		},
 		extend: {
+      translate: {
+        'neg-2/4': '-50%',
+       },
+    },
+		extend: {
 			fontFamily: {
 				inter: ["inter", "serif"],
 			},
