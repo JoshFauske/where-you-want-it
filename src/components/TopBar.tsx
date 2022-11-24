@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import NavButton from "./NavButton";
@@ -7,10 +8,23 @@ type TopBarProps = {};
 const TopBar = ({}: TopBarProps) => {
   const location = useLocation();
   const pathName = location.pathname;
+  const [isScroll, setIsScroll] = useState(false);
+  const changeNavbar = () => {
+    if (window.scrollY >= 1) {
+      setIsScroll(true);
+    } else {
+      setIsScroll(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbar);
 
   return (
-    <div className="container mx-auto py-4">
-      <div className="flex items-center justify-between">
+    <nav
+      className={`py-4 sticky top-0 bg-white ${
+        isScroll ? "border-b-2 border-primaryColor shadow" : ""
+      }`}
+    >
+      <div className="flex items-center justify-between container">
         <Link to="/" className="flex items-center">
           <Logo width={56} className="mr-2" />
           <h3>Where You Want It</h3>
@@ -33,7 +47,7 @@ const TopBar = ({}: TopBarProps) => {
           />
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
