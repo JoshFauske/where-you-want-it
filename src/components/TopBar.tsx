@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import NavButton from "./NavButton";
 
@@ -11,10 +11,10 @@ const TopBar = ({}: TopBarProps) => {
   return (
     <div className="container mx-auto py-4">
       <div className="flex items-center justify-between">
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <Logo width={56} className="mr-2" />
           <h3>Where You Want It</h3>
-        </div>
+        </Link>
         <div className="flex items-center">
           <NavButton
             text="Home"
