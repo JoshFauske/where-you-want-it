@@ -10,7 +10,16 @@ type NavButtonProps = {
 const NavButton = ({ href, text, active }: NavButtonProps) => {
   return (
     <Link to={href}>
-      <div className={`ml-3 ${active ? "font-bold border-b-2 border-primaryColor" : ""}`}>{text}</div>
+      <div
+        className={`ml-3 ${
+          active ? "font-bold border-b-2 border-primaryColor" : ""
+        }`}
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        {text}
+      </div>
     </Link>
   );
 };

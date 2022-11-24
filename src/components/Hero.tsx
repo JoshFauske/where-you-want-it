@@ -18,7 +18,7 @@ const Hero = ({ title, text, imageSrc, imageAlt }: HeroProps) => {
           onClick={(e) => {
             let form = document.getElementById("quoteForm");
             e.preventDefault();
-            form && form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            form && form.scrollIntoView({ behavior: 'smooth', block: 'center'});
           }}
         >
           Get a Quote Today
