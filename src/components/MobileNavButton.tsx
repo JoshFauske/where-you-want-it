@@ -5,13 +5,28 @@ type MobileNavButtonProps = {
   text: string;
   href: string;
   active: boolean;
-	onClick: any
+  onClick: any;
 };
 
-const MobileNavButton = ({ href, text, active, onClick }: MobileNavButtonProps) => {
+const MobileNavButton = ({
+  href,
+  text,
+  active,
+  onClick,
+}: MobileNavButtonProps) => {
   return (
     <Link to={href}>
-      <div className={`w-fit mb-1 ${active ? "font-bold border-b-2 border-primaryColor" : ""}`} onClick={onClick}>{text}</div>
+      <div
+        className={`w-fit mb-1 ${
+          active ? "font-bold border-b-2 border-primaryColor" : ""
+        }`}
+        onClick={onClick}
+        onClickCapture={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        {text}
+      </div>
     </Link>
   );
 };
