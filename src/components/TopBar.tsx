@@ -85,6 +85,9 @@ const TopBar = ({}: TopBarProps) => {
             href="/gallery"
             active={pathName == "/gallery" ? true : false}
           />
+          <button className="w-fit font-bold bg-primaryColor text-white p-2 ml-3">
+            <a href="tel:303-802-6770">CALL (303) 802-6770</a>
+          </button>
         </div>
       </div>
     </nav>
