@@ -58,6 +58,9 @@ const TopBar = ({}: TopBarProps) => {
             active={pathName == "/gallery" ? true : false}
             onClick={onMenuClick}
           />
+          <button className="w-fit font-bold bg-primaryColor text-white p-2 mt-2">
+            <a href="tel:303-802-6770">CALL (303) 802-6770</a>
+          </button>
         </Menu>
       </div>
       <div className="flex items-center justify-between container">
