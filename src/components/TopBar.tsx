@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import NavButton from "./NavButton";
-import { stack as Menu } from "react-burger-menu";
+import { elastic as Menu } from "react-burger-menu";
 import MobileNavButton from "./MobileNavButton";
+import { AiOutlineHome } from "react-icons/ai";
+import { BsBriefcase } from "react-icons/bs";
+import { BiPhotoAlbum } from "react-icons/bi";
 
 type TopBarProps = {};
 
@@ -45,21 +48,24 @@ const TopBar = ({}: TopBarProps) => {
             href="/"
             active={pathName == "/" ? true : false}
             onClick={onMenuClick}
+            icon={<AiOutlineHome />}
           />
           <MobileNavButton
             text="Services"
             href="/services"
             active={pathName == "/services" ? true : false}
             onClick={onMenuClick}
+            icon={<BsBriefcase />}
           />
           <MobileNavButton
             text="Gallery"
             href="/gallery"
             active={pathName == "/gallery" ? true : false}
             onClick={onMenuClick}
+            icon={<BiPhotoAlbum />}
           />
-          <button className="w-fit font-bold bg-primaryColor text-white p-2 mt-2">
-            <a href="tel:303-802-6770">CALL (303) 802-6770</a>
+          <button className="w-fit font-bold bg-primaryColor text-white p-2 mt-3">
+            <a href="tel:303-802-6770">(303) 802-6770</a>
           </button>
         </Menu>
       </div>
