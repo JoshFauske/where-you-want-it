@@ -6,38 +6,38 @@ import Section from "../components/Section";
 import SectionTitle from "../components/SectionTitle";
 
 const images = [
-  "/public/image1.jpeg",
-  "/public/image2.jpeg",
-  "/public/image3.jpeg",
-  "/public/image4.jpeg",
-  "/public/image5.jpeg",
-  "/public/image6.jpeg",
-  "/public/image7.jpeg",
-  "/public/image8.jpeg",
-  "/public/image9.jpeg",
-  "/public/image10.jpeg",
-  "/public/image11.jpeg",
-  "/public/image12.jpeg",
-  "/public/image13.jpeg",
-  "/public/image14.jpeg",
-  "/public/image15.jpeg",
-  "/public/image16.jpeg",
-  "/public/image17.jpeg",
-  "/public/image18.jpeg",
-  "/public/image19.jpeg",
-  "/public/image20.jpeg",
-  "/public/image21.jpeg",
-  "/public/image22.jpeg",
-  "/public/image23.jpeg",
-  "/public/image24.jpeg",
-  "/public/image25.jpeg",
-  "/public/image26.jpeg",
-  "/public/image27.jpeg",
-  "/public/image28.jpeg",
-  "/public/image29.jpeg",
-  "/public/image30.jpeg",
-  "/public/image31.jpeg",
-  "/public/image32.jpeg",
+  "/image1.jpeg",
+  "/image2.jpeg",
+  "/image3.jpeg",
+  "/image4.jpeg",
+  "/image5.jpeg",
+  "/image6.jpeg",
+  "/image7.jpeg",
+  "/image8.jpeg",
+  "/image9.jpeg",
+  "/image10.jpeg",
+  "/image11.jpeg",
+  "/image12.jpeg",
+  "/image13.jpeg",
+  "/image14.jpeg",
+  "/image15.jpeg",
+  "/image16.jpeg",
+  "/image17.jpeg",
+  "/image18.jpeg",
+  "/image19.jpeg",
+  "/image20.jpeg",
+  "/image21.jpeg",
+  "/image22.jpeg",
+  "/image23.jpeg",
+  "/image24.jpeg",
+  "/image25.jpeg",
+  "/image26.jpeg",
+  "/image27.jpeg",
+  "/image28.jpeg",
+  "/image29.jpeg",
+  "/image30.jpeg",
+  "/image31.jpeg",
+  "/image32.jpeg",
 ];
 
 type GalleryProps = {};
@@ -49,7 +49,7 @@ const Gallery = ({}: GalleryProps) => {
       <Hero
         title="Moving can be fun, if you let it be"
         text="Check out some pictures of our previous moves and witness for yourself how easy it really is."
-        imageSrc="/public/gallery.png"
+        imageSrc="/gallery.png"
         imageAlt="Happy Employee"
       />
       <Section>

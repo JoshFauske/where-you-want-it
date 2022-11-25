@@ -15,7 +15,7 @@ const Home = () => {
       <Hero
         title="Moving made way too simple"
         text="Get rid of the stress of moving by letting us do the heavy lifting!"
-        imageSrc="/public/home.png"
+        imageSrc="/home.png"
         imageAlt="Moving Truck"
       />
 			<Section>

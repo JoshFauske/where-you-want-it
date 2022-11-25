@@ -6,7 +6,7 @@ type LogoProps = {
 const Logo = ({ width, className }: LogoProps) => {
 	return (
 		<img
-			src="/public/logo.png"
+			src="/logo.png"
 			alt=""
 			width={width}
 			className={className}
