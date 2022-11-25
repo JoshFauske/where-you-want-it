@@ -15,7 +15,7 @@ const Services = () => {
       <Hero
         title="From moving to storage, we do it all"
         text="If you don’t want to worry how to move or store your things, you’ve come to the right place!"
-        imageSrc="/src/assets/services.png"
+        imageSrc="/public/services.png"
         imageAlt="Moving Truck"
       />
       <Section>

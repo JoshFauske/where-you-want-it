@@ -6,38 +6,38 @@ import Section from "../components/Section";
 import SectionTitle from "../components/SectionTitle";
 
 const images = [
-  "/src/assets/image1.jpeg",
-  "/src/assets/image2.jpeg",
-  "/src/assets/image3.jpeg",
-  "/src/assets/image4.jpeg",
-  "/src/assets/image5.jpeg",
-  "/src/assets/image6.jpeg",
-  "/src/assets/image7.jpeg",
-  "/src/assets/image8.jpeg",
-  "/src/assets/image9.jpeg",
-  "/src/assets/image10.jpeg",
-  "/src/assets/image11.jpeg",
-  "/src/assets/image12.jpeg",
-  "/src/assets/image13.jpeg",
-  "/src/assets/image14.jpeg",
-  "/src/assets/image15.jpeg",
-  "/src/assets/image16.jpeg",
-  "/src/assets/image17.jpeg",
-  "/src/assets/image18.jpeg",
-  "/src/assets/image19.jpeg",
-  "/src/assets/image20.jpeg",
-  "/src/assets/image21.jpeg",
-  "/src/assets/image22.jpeg",
-  "/src/assets/image23.jpeg",
-  "/src/assets/image24.jpeg",
-  "/src/assets/image25.jpeg",
-  "/src/assets/image26.jpeg",
-  "/src/assets/image27.jpeg",
-  "/src/assets/image28.jpeg",
-  "/src/assets/image29.jpeg",
-  "/src/assets/image30.jpeg",
-  "/src/assets/image31.jpeg",
-  "/src/assets/image32.jpeg",
+  "/public/image1.jpeg",
+  "/public/image2.jpeg",
+  "/public/image3.jpeg",
+  "/public/image4.jpeg",
+  "/public/image5.jpeg",
+  "/public/image6.jpeg",
+  "/public/image7.jpeg",
+  "/public/image8.jpeg",
+  "/public/image9.jpeg",
+  "/public/image10.jpeg",
+  "/public/image11.jpeg",
+  "/public/image12.jpeg",
+  "/public/image13.jpeg",
+  "/public/image14.jpeg",
+  "/public/image15.jpeg",
+  "/public/image16.jpeg",
+  "/public/image17.jpeg",
+  "/public/image18.jpeg",
+  "/public/image19.jpeg",
+  "/public/image20.jpeg",
+  "/public/image21.jpeg",
+  "/public/image22.jpeg",
+  "/public/image23.jpeg",
+  "/public/image24.jpeg",
+  "/public/image25.jpeg",
+  "/public/image26.jpeg",
+  "/public/image27.jpeg",
+  "/public/image28.jpeg",
+  "/public/image29.jpeg",
+  "/public/image30.jpeg",
+  "/public/image31.jpeg",
+  "/public/image32.jpeg",
 ];
 
 type GalleryProps = {};
@@ -49,7 +49,7 @@ const Gallery = ({}: GalleryProps) => {
       <Hero
         title="Moving can be fun, if you let it be"
         text="Check out some pictures of our previous moves and witness for yourself how easy it really is."
-        imageSrc="/src/assets/gallery.png"
+        imageSrc="/public/gallery.png"
         imageAlt="Happy Employee"
       />
       <Section>
