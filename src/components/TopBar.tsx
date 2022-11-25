@@ -22,15 +22,15 @@ const TopBar = ({}: TopBarProps) => {
   };
   window.addEventListener("scroll", changeNavbar);
 
-	const onMenuClick = () => {
-		setIsOpen(!isOpen)
+  const onMenuClick = () => {
+    setIsOpen(!isOpen);
 
     if (isOpen) {
       document.body.style.overflow = "unset";
     } else {
       document.body.style.overflow = "hidden";
     }
-	}
+  };
 
   return (
     <nav
@@ -40,7 +40,7 @@ const TopBar = ({}: TopBarProps) => {
     >
       <div className="block sm:hidden">
         <Menu right isOpen={isOpen} onOpen={onMenuClick} onClose={onMenuClick}>
-				<MobileNavButton
+          <MobileNavButton
             text="Home"
             href="/"
             active={pathName == "/" ? true : false}
@@ -61,7 +61,11 @@ const TopBar = ({}: TopBarProps) => {
         </Menu>
       </div>
       <div className="flex items-center justify-between container">
-        <Link to="/" className="flex items-center">
+        <Link
+          to="/"
+          className="flex items-center"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           <Logo width={56} className="mr-2" />
           <h3>Where You Want It</h3>
         </Link>
