@@ -6,18 +6,18 @@ module.exports = {
 		container: {
 			center: true,
 			padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '1rem',
-      },
+				DEFAULT: "1rem",
+				sm: "2rem",
+				lg: "1rem",
+			},
 		},
 		extend: {
 			fontFamily: {
 				inter: ["inter", "serif"],
 			},
 			colors: {
-				primaryColor: "#FF7900",
-			}
+				primaryColor: "#235594",
+			},
 		},
 	},
 	plugins: [],
